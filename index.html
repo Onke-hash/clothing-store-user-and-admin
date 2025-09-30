@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FATALE ESSENTIALS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="FATALE ESSENTIALS Logo" class="logo-image">
+        <h1>FATALE ESSENTIALS</h1>
+      </div>
+      <div class="header-controls" id="header-controls" style="display: none;">
+        <h2>Product Catalog</h2>
+        <div class="filter-group">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="All">All Categories</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Bags">Bags</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Perfumes">Perfumes</option>
+            <option value="Electronics">Electronics</option>
+          </select>
+        </div>
+        <button id="logoutBtn" class="logout-btn" aria-label="Logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="login-section" class="section">
+      <div class="container login-container" role="region" aria-label="Login Form">
+        <h2>Login</h2>
+        <p id="login-error" class="error hidden" role="alert"></p>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              required
+              aria-required="true"
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <p class="register-link">
+          Don't have an account? <a href="#">Register</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="user-dashboard" class="section hidden">
+      <div class="container">
+        <div id="user-productList" class="product-grid"></div>
+      </div>
+    </div>
+
+    <div id="admin-dashboard" class="section hidden">
+      <div class="container">
+        <div class="form-container" role="region" aria-label="Add or Edit Product">
+          <h3 id="formTitle">Add Product</h3>
+          <form id="productForm">
+            <input id="productId" type="hidden" />
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <input id="name" type="text" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category">
+                <option value="Clothing">Clothing</option>
+                <option value="Bags">Bags</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Perfumes">Perfumes</option>
+                <option value="Electronics">Electronics</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input id="price" type="number" step="0.01" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="stock">Stock</label>
+              <input id="stock" type="number" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="image">Image Path</label>
+              <input id="image" type="text" placeholder="e.g., images/product.jpg" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" required aria-required="true"></textarea>
+            </div>
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+        <div id="admin-productList" class="product-grid"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>FATALE ESSENTIALS</p>
+      <p>123 Luxury Lane, Fashion City, FC 12345</p>
+      <p>Contact: <a href="mailto:support@fataleessentials.com">support@fataleessentials.com</a> | Phone: (123) 456-7890</p>
+      <p>&copy; 2025 FATALE ESSENTIALS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
